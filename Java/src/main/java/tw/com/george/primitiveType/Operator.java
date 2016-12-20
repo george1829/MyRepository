@@ -45,9 +45,37 @@ public class Operator {
 		System.out.printf("0 XOR 0 %5d%n", 0 ^ 0);
 		System.out.printf("0 XOR 1 %5d%n", 0 ^ 1);
 		System.out.printf("1 XOR 0 %5d%n", 1 ^ 0);
-		System.out.printf("1 XOR 1 %5d%n", 1 ^ 1);
+		System.out.printf("1 XOR 1 %5d%n%n", 1 ^ 1);
 		
+		//~補數運算==>將所有位0變1，1變0
+		byte number1 = 1;     //00000001(二進位)
+		System.out.println(~number1);   //11111110(二進位)
 		
+		/*
+		 * 位移運算子
+		 * 左移(<<)：將所有位元往左移指定位數，左邊被擠出去的位元會被丟棄，而右邊補上0
+		 * 右移(>>)：將所有位元往右移指定位數，右邊被擠出去的位元會被丟棄，而左邊原本是0就補上0，原本是1就補上1
+		 * >>> 運算子：這個運算子在右移後，最左邊一定是補0(用32位二進位來看)
+		 */
+		System.out.println("\n位元運算子：");
+		int num = 1;   //00000001
+		System.out.printf("左移兩位數  ： %d%n",num << 2);    //00000100
+		System.out.printf("右移兩位數  ： %d%n",num >> 2);      //00000000
+		int num1 = -2;  //11111110
+		System.out.printf("左移兩位數 ： %d%n", num1 << 3);  //11110000
+		System.out.printf("右移兩位數 ： %d%n", num1 >> 3);  //11111111
+		System.out.printf("右移兩位數>>> ： %d%n", num1 >>> 31);  //0000 0000 0000 0000 0000 0000 0000 0000 0000 0001
+		
+		//遞增、遞減運算
+		System.out.println("\n遞增、遞減運算");
+		int a=0;
+		System.out.println("++a="+ (++a));
+		int b=0;
+		System.out.println("b++="+ (b++));
+		int c=0;
+		System.out.println("--c="+ (--c));
+		int d=0;
+		System.out.println("d--="+ (d--));
 	}
 
 }
